@@ -50,9 +50,9 @@ export default function Header({ setIpInfo, initialIp }: Props) {
   }
 
   return (
-    <header className="flex h-2/5 w-full flex-col items-center space-y-4 bg-[url('/pattern-bg.png')] ">
+    <div className="flex h-2/5 w-full flex-col items-center space-y-4 bg-[url('/pattern-bg.png')] bg-cover bg-no-repeat">
       <h1 className="pt-6 text-4xl font-bold text-white">IP Address Tracker</h1>
-      <div className="flex w-full items-center justify-center  px-4 py-4">
+      <div className="flex items-center justify-center">
         <form
           className="flex h-16 rounded-xl bg-white"
           onSubmit={(e) => {
@@ -63,7 +63,7 @@ export default function Header({ setIpInfo, initialIp }: Props) {
           <input
             type="text"
             placeholder="Search for any IP address or domain"
-            className="w-96 rounded-xl border-none  bg-white py-2 px-6 text-black outline-none"
+            className="rounded-xl border-none bg-white py-2 px-6 text-black outline-none md:w-96"
             onChange={(e) => setIp(e.target.value)}
           />
           <button
@@ -79,6 +79,6 @@ export default function Header({ setIpInfo, initialIp }: Props) {
           </button>
         </form>
       </div>
-    </header>
+    </div>
   );
 }

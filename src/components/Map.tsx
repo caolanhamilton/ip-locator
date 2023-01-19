@@ -16,7 +16,6 @@ type Props = {
   ipInfo: IpInfo;
 };
 export default function Map({ ipInfo }: Props) {
-  console.log(ipInfo);
   return (
     <MapContainer
       center={[ipInfo.location.lat || 53, ipInfo.location.lng || 42]}
