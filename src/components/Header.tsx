@@ -20,7 +20,7 @@ type Props = {
   initialIp: string;
 };
 
-export default function Header({ ipInfo, setIpInfo, initialIp }: Props) {
+export default function Header({ setIpInfo, initialIp }: Props) {
   const [ip, setIp] = useState("");
   useEffect(() => {
     getLocationInfo(initialIp);
@@ -32,7 +32,6 @@ export default function Header({ ipInfo, setIpInfo, initialIp }: Props) {
     )
       .then((res) => res.json())
       .then(({ ip, location, isp }: IpInfo) => {
-        console.log(location, "in useeffect");
         setIpInfo({
           ip: ip,
           location: {

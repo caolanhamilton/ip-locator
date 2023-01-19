@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
-import { GetServerSideProps } from "next";
+import type { GetServerSideProps } from "next";
 
 import ResultBox from "../components/ResultBox";
 import dynamic from "next/dynamic";
@@ -60,6 +60,7 @@ const Home: NextPage<Props> = ({ initialIp }) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   let initialIp = req.headers["x-real-ip"] || req.connection.remoteAddress;
   if (!initialIp) {
